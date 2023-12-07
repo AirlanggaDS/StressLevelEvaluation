@@ -13,15 +13,6 @@ scaler = model_data["scaler"]
 # Web Title
 st.title("Stress Level Evaluation")
 
-# Input
-# Usia = st.number_input('Masukkan usia Anda', min_value=0)
-# JenisKelamin = st.radio('Jenis Kelamin', ['Laki-laki', 'Perempuan'], key='jenis_kelamin')
-# Status = st.radio('Status', ['Pelajar', 'Mahasiswa', 'Lainnya'], key='status')
-# Bekerja = st.radio('Apakah Anda bekerja (termasuk kerja paruh waktu)?', ['Ya', 'Tidak'], key='bekerja')
-# JamTidurPerhari = st.number_input('Berapa jam Anda tidur dalam sehari? (contoh: 8)', min_value=0)
-# KesibukanPerhari = st.number_input('Berapa jam kesibukan Anda dalam sehari? (bulatkan dalam jam)', min_value=0)
-
-
 # Fungsi untuk konversi pilihan selectbox menjadi nilai numerik
 def convert_selectbox_choice(choice):
     choices_map = {
@@ -34,106 +25,66 @@ def convert_selectbox_choice(choice):
     return choices_map.get(choice, 0)
 
 
+option = [
+    "Tidak pernah",
+    "Hampir tidak pernah",
+    "Terkadang",
+    "Cukup sering",
+    "Sangat sering",
+]
+
 FrequencyOfAnger = st.selectbox(
     "Dalam sebulan terakhir, seberapa sering Anda kesal karena suatu hal terjadi secara tak terduga?",
-    [
-        "Tidak pernah",
-        "Hampir tidak pernah",
-        "Terkadang",
-        "Cukup sering",
-        "Sangat sering",
-    ],
+    option,
     key="anger",
 )
 FrequencyOfAnger = convert_selectbox_choice(FrequencyOfAnger)
 
 LackOfControl = st.selectbox(
     "Dalam sebulan terakhir, seberapa sering Anda merasa tidak mampu mengendalikan hal-hal penting dalam hidup Anda?",
-    [
-        "Tidak pernah",
-        "Hampir tidak pernah",
-        "Terkadang",
-        "Cukup sering",
-        "Sangat sering",
-    ],
+    option,
     key="control",
 )
 LackOfControl = convert_selectbox_choice(LackOfControl)
 
 AnxietyAndStress = st.selectbox(
     "Dalam sebulan terakhir, seberapa sering Anda merasa gugup dan stres?",
-    [
-        "Tidak pernah",
-        "Hampir tidak pernah",
-        "Terkadang",
-        "Cukup sering",
-        "Sangat sering",
-    ],
+    option,
     key="anxiety_stress",
 )
 AnxietyAndStress = convert_selectbox_choice(AnxietyAndStress)
 
 SelfEfficacy = st.selectbox(
     "Dalam sebulan terakhir, seberapa sering Anda merasa yakin dengan kemampuan Anda dalam menangani masalah pribadi?",
-    [
-        "Tidak pernah",
-        "Hampir tidak pernah",
-        "Terkadang",
-        "Cukup sering",
-        "Sangat sering",
-    ],
+    option,
     key="self_efficacy",
 )
 SelfEfficacy = convert_selectbox_choice(SelfEfficacy)
 
 PerceivedControl = st.selectbox(
     "Dalam sebulan terakhir, seberapa sering Anda merasa segalanya berjalan sesuai keinginan Anda?",
-    [
-        "Tidak pernah",
-        "Hampir tidak pernah",
-        "Terkadang",
-        "Cukup sering",
-        "Sangat sering",
-    ],
+    option,
     key="perceived_control",
 )
 PerceivedControl = convert_selectbox_choice(PerceivedControl)
 
 PerceivedOverwhelm = st.selectbox(
     "Dalam sebulan terakhir, seberapa sering Anda menyadari bahwa Anda tidak mampu menyelesaikan semua hal yang harus Anda lakukan?",
-    [
-        "Tidak pernah",
-        "Hampir tidak pernah",
-        "Terkadang",
-        "Cukup sering",
-        "Sangat sering",
-    ],
+    option,
     key="perceived_overwhelm",
 )
 PerceivedOverwhelm = convert_selectbox_choice(PerceivedOverwhelm)
 
 FeelingOfMastery = st.selectbox(
     "Dalam sebulan terakhir, seberapa sering Anda merasa berada di puncak segalanya?",
-    [
-        "Tidak pernah",
-        "Hampir tidak pernah",
-        "Terkadang",
-        "Cukup sering",
-        "Sangat sering",
-    ],
+    option,
     key="feeling_of_mastery",
 )
 FeelingOfMastery = convert_selectbox_choice(FeelingOfMastery)
 
 CumulativeDifficulty = st.selectbox(
     "Dalam sebulan terakhir, seberapa sering Anda merasakan kesulitan yang menumpuk sehingga Anda tidak mampu mengatasinya?",
-    [
-        "Tidak pernah",
-        "Hampir tidak pernah",
-        "Terkadang",
-        "Cukup sering",
-        "Sangat sering",
-    ],
+    option,
     key="cumulative_difficulty",
 )
 CumulativeDifficulty = convert_selectbox_choice(CumulativeDifficulty)
@@ -227,4 +178,3 @@ if st.button("Ukur Tingkat Stress"):
     st.write("📞 **Airlangga**: +62 889-9645-9159")
     st.write("📞 **Nathanael**: +62 812-8777-4009")
     st.write("📞 **Shabrina**: +62 857-0630-6913")
-

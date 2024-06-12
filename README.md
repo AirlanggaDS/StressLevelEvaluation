@@ -4,7 +4,7 @@ This project demonstrates a unique approach to the understanding and identificat
 
 ## Installation
 
-First, you need to install Streamlit framework to run the created prediction model.
+First, you need to install all the libraries needed
 
 ```bash
   pip install -r requirements.txt
